@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek tools",
+    "description": "Expose DeepSeek web search, page fetch, OCR, text-to-speech, and speech-to-text as agent tools."
+  }
+}

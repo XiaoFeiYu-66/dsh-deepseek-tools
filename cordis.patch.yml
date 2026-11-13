@@ -1,0 +1,25 @@
+# dsh-deepseek-tools 组合包补丁：插入 DeepSeek 工具 API 插件行。
+#
+# 插件把五个工具注册进宿主工具表：
+#   deepseek_search / deepseek_fetch / deepseek_ocr / deepseek_tts / deepseek_asr
+#
+# 配置项（均可省略；在 profile 的 cordis.patch.yml 里按 id 覆盖本行时，
+# 覆盖会替换整块 config，请一并写出需要的字段）：
+#   apiKey:           显式指定 Key；一般不用填——留空时每次调用都会解析
+#                     credentials 的 DEEPSEEK_API_KEY 引用（DSH 设置里的 API Key，
+#                     含同名环境变量 / .env 回退），再回退到已登录账号凭据。
+#   baseUrl:          API 根地址，默认 https://api.deepseek.com
+#   timeoutMs:        单次请求总超时，默认 300000（OCR 的官方上限是 180 秒）
+#   maxRenderChars:   单次结果交给模型的字符上限，默认 30000
+#   outputDir:        deepseek_tts 默认输出目录，省略时用会话工作目录
+#
+# 示例：
+#   - id: deepseek-tools
+#     name: 'dsh-deepseek-tools'
+#     config:
+#       apiKey: sk-xxxxxxxx
+#       maxRenderChars: 40000
+- insert:
+    - id: deepseek-tools
+      name: 'dsh-deepseek-tools'
+      config: {}

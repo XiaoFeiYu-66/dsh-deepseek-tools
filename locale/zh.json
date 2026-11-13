@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek 工具 API",
+    "description": "把 DeepSeek 的网页搜索、网页抓取、OCR、语音合成、语音识别接成模型可调用的工具。"
+  }
+}
